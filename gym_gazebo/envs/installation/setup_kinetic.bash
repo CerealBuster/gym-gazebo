@@ -76,6 +76,13 @@ cd ../../catkin_ws/src/
 vcs import < ../../gazebo.repos
 
 cd ..
+
+#Create CATKIN_IGNORE files in kobuki_qtestsuite, wiimote and spacenav_node so we can compile
+
+touch src/kobuki_desktop/kobuki_qtestsuite/CATKIN_IGNORE
+touch src/joystick_drivers/wiimote/CATKIN_IGNORE
+touch src/joystick_drivers/spacenav_node/CATKIN_IGNORE
+
 catkin_make --pkg mav_msgs
 source devel/setup.bash
 catkin_make -j 1
