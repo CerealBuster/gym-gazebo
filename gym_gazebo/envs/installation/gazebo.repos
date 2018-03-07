@@ -98,7 +98,7 @@ repositories:
   xacro:
     type: git
     url: https://github.com/ros/xacro
-    version: indigo-devel
+    version: kinetic-devel
   yocs_msgs:
     type: git
     url: https://github.com/yujinrobot/yocs_msgs
