@@ -14,7 +14,7 @@ repositories:
   ecl_core:
     type: git
     url: https://github.com/stonier/ecl_core
-    version: devel
+    version: release/0.61-indigo-kinetic
   ecl_lite:
     type: git
     url: https://github.com/stonier/ecl_lite
@@ -22,7 +22,7 @@ repositories:
   ecl_navigation:
     type: git
     url: https://github.com/stonier/ecl_navigation
-    version: devel
+    version: release/0.61-indigo-kinetic
   ecl_tools:
     type: git
     url: https://github.com/stonier/ecl_tools
