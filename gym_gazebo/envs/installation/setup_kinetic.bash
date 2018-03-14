@@ -13,7 +13,7 @@ fi
 source /opt/ros/kinetic/setup.bash
 
 # Create catkin_ws
-ws="catkin_ws"
+ws="../../../catkin_ws"
 if [ -d $ws ]; then
   echo "Error: catkin_ws directory already exists" 1>&2
 fi
@@ -24,8 +24,7 @@ catkin_init_workspace
 
 
 # Import and build dependencies
-cd ../../catkin_ws/src/
-vcs import < ../../gazebo.repos
+vcs import < ../../gym_gazebo/envs/installation/gazebo.repos
 
 cd ..
 
@@ -38,11 +37,12 @@ touch src/joystick_drivers/spacenav_node/CATKIN_IGNORE
 catkin_make --pkg mav_msgs
 source devel/setup.bash
 catkin_make -j 1
+
 bash -c 'echo source `pwd`/devel/setup.bash >> ~/.bashrc'
 echo "## ROS workspace compiled ##"
 
 # add own models path to gazebo models path
 if [ -z "$GAZEBO_MODEL_PATH" ]; then
-  bash -c 'echo "export GAZEBO_MODEL_PATH="`pwd`/../../assets/models >> ~/.bashrc'
+  bash -c 'echo "export GAZEBO_MODEL_PATH="`pwd`/../../gym_gazebo/envs/assets/models >> ~/.bashrc'
   exec bash #reload bashrc
 fi
